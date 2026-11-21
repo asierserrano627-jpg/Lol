@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             Intent intent = new Intent(
                     Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
@@ -31,7 +32,7 @@ public class MainActivity extends Activity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this)) {
                 launchOverlay();
             } else {
-                Toast.makeText(this, "Permiso denegado.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Permiso de overlay denegado.", Toast.LENGTH_LONG).show();
                 finish();
             }
         }
